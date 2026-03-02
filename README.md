@@ -1,2 +1,3 @@
 # web-portfolio-template
-web projesi dersinde kullanacağınız şablonu oluşturuyorum
+Bu site Naciye Duygu tarafından yapılmaktadır .
+
