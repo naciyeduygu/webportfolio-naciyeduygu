@@ -1,37 +1,340 @@
-<html>
+<!DOCTYPE html>
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title> Sitenizin başlığı </title>
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>Donanım Marketi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Üst alan -->
-  <header> 
-      <h1> Fatma Keskinkılıç </h1>
-  </header>
-  <!-- Navigasyon menüsü -->
-  <nav>
-      <ul>
-        <li> <a href="index.html"> Ana Sayfa </li>
-        <li> <a href="pages/about.html"> Ana Sayfa </li>
-        <li> <a href="pages/projeler.html"> Projeler </li>
-        <li> <a href="pages/contact.html"> İletişim </li>
-      </ul>
-  </nav>
-  <!-- Ana içerik -->
-  <main>
-    <section>
-        <h2> Hoş geldiniz </h2>
-        <p> Bu benim kişisel portfolyo sitem </p>
-    </section>
-    <section>
-      <h2> Projelerim </h2>
-      <p> Yakında düzenlenecek </p>
-    </section>
-  </main>
-  <!-- Alt alan -->
-  <footer>
-     <p> © 2026 Tüm hakları saklıdır... </p>
-  </footer>
+
+<header>
+    <div class="logo">Donanım Marketi</div>
+    <div class="header-right">
+        <div class="user-info" id="user-info">
+            <span id="login-btn" onclick="showLogin()">Giriş Yap</span> | 
+            <span id="register-btn" onclick="showRegister()">Kayıt Ol</span>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 Sepet (<span id="cart-count">0</span>)
+        </div>
+    </div>
+</header>
+
+<section class="search-section">
+    <select id="category-select">
+        <option value="all">Tüm Kategoriler</option>
+        <option value="gpu">Ekran Kartı</option>
+        <option value="cpu">İşlemci</option>
+        <option value="ram">RAM</option>
+        <option value="ssd">SSD</option>
+        <option value="psu">Güç Kaynağı</option>
+        <option value="mb">Anakart</option>
+        <option value="monitor">Monitör</option>
+        <option value="keyboard">Klavye</option>
+        <option value="mouse">Mouse</option>
+        <option value="case">Kasa</option>
+        <option value="cooler">Soğutma</option>
+        <option value="hdd">HDD</option>
+    </select>
+    <input type="text" id="search-input" placeholder="Ürün ara...">
+</section>
+
+<section class="hero">
+    <h1>Bilgisayar Donanım Ürünleri</h1>
+</section>
+
+<section class="products">
+    <!-- 1 -->
+    <div class="card" data-category="gpu">
+        <img src="https://source.unsplash.com/300x200/?gpu" alt="RTX 4060">
+        <h3>RTX 4060</h3>
+        <p class="info">Yüksek performanslı ekran kartı.</p>
+        <p>12500 TL</p>
+        <button onclick="addToCart('RTX 4060',12500)">Satın Al</button>
+        <button onclick="sellItem('RTX 4060')">Sat</button>
+    </div>
+
+    <!-- 2 -->
+    <div class="card" data-category="gpu">
+        <img src="https://source.unsplash.com/300x200/?graphics-card" alt="RTX 4070">
+        <h3>RTX 4070</h3>
+        <p class="info">Yeni nesil ekran kartı.</p>
+        <p>18500 TL</p>
+        <button onclick="addToCart('RTX 4070',18500)">Satın Al</button>
+        <button onclick="sellItem('RTX 4070')">Sat</button>
+    </div>
+
+    <!-- 3 -->
+    <div class="card" data-category="cpu">
+        <img src="https://source.unsplash.com/300x200/?cpu" alt="Intel i9 13900K">
+        <h3>Intel i9 13900K</h3>
+        <p class="info">Üst seviye işlemci.</p>
+        <p>14500 TL</p>
+        <button onclick="addToCart('Intel i9 13900K',14500)">Satın Al</button>
+        <button onclick="sellItem('Intel i9 13900K')">Sat</button>
+    </div>
+
+    <!-- 4 -->
+    <div class="card" data-category="cpu">
+        <img src="https://source.unsplash.com/300x200/?processor" alt="AMD Ryzen 9 7900X">
+        <h3>AMD Ryzen 9 7900X</h3>
+        <p class="info">Çok çekirdekli işlemci.</p>
+        <p>9500 TL</p>
+        <button onclick="addToCart('AMD Ryzen 9 7900X',9500)">Satın Al</button>
+        <button onclick="sellItem('AMD Ryzen 9 7900X')">Sat</button>
+    </div>
+
+    <!-- 5 -->
+    <div class="card" data-category="ram">
+        <img src="https://source.unsplash.com/300x200/?ram" alt="16GB DDR4 RAM">
+        <h3>16GB DDR4 RAM</h3>
+        <p class="info">Hızlı ve güvenilir bellek.</p>
+        <p>1200 TL</p>
+        <button onclick="addToCart('16GB DDR4 RAM',1200)">Satın Al</button>
+        <button onclick="sellItem('16GB DDR4 RAM')">Sat</button>
+    </div>
+
+    <!-- 6 -->
+    <div class="card" data-category="ram">
+        <img src="https://source.unsplash.com/300x200/?memory" alt="32GB DDR5 RAM">
+        <h3>32GB DDR5 RAM</h3>
+        <p class="info">Yeni nesil bellek.</p>
+        <p>4200 TL</p>
+        <button onclick="addToCart('32GB DDR5 RAM',4200)">Satın Al</button>
+        <button onclick="sellItem('32GB DDR5 RAM')">Sat</button>
+    </div>
+
+    <!-- 7 -->
+    <div class="card" data-category="ssd">
+        <img src="https://source.unsplash.com/300x200/?ssd" alt="1TB NVMe SSD">
+        <h3>1TB NVMe SSD</h3>
+        <p class="info">Yüksek hızda veri aktarımı.</p>
+        <p>3500 TL</p>
+        <button onclick="addToCart('1TB NVMe SSD',3500)">Satın Al</button>
+        <button onclick="sellItem('1TB NVMe SSD')">Sat</button>
+    </div>
+
+    <!-- 8 -->
+    <div class="card" data-category="ssd">
+        <img src="https://source.unsplash.com/300x200/?storage" alt="2TB SATA SSD">
+        <h3>2TB SATA SSD</h3>
+        <p class="info">Büyük depolama kapasitesi.</p>
+        <p>2800 TL</p>
+        <button onclick="addToCart('2TB SATA SSD',2800)">Satın Al</button>
+        <button onclick="sellItem('2TB SATA SSD')">Sat</button>
+    </div>
+
+    <!-- 9 -->
+    <div class="card" data-category="psu">
+        <img src="https://source.unsplash.com/300x200/?power-supply" alt="850W Güç Kaynağı">
+        <h3>850W Güç Kaynağı</h3>
+        <p class="info">Yüksek watt PSU.</p>
+        <p>2200 TL</p>
+        <button onclick="addToCart('850W Güç Kaynağı',2200)">Satın Al</button>
+        <button onclick="sellItem('850W Güç Kaynağı')">Sat</button>
+    </div>
+
+    <!-- 10 -->
+    <div class="card" data-category="mb">
+        <img src="https://source.unsplash.com/300x200/?motherboard" alt="MSI Z790 Anakart">
+        <h3>MSI Z790 Anakart</h3>
+        <p class="info">Intel 13. nesil uyumlu anakart.</p>
+        <p>4200 TL</p>
+        <button onclick="addToCart('MSI Z790 Anakart',4200)">Satın Al</button>
+        <button onclick="sellItem('MSI Z790 Anakart')">Sat</button>
+    </div>
+
+    <!-- 11 -->
+    <div class="card" data-category="mb">
+        <img src="https://source.unsplash.com/300x200/?motherboard" alt="ASUS B550 Anakart">
+        <h3>ASUS B550 Anakart</h3>
+        <p class="info">AMD uyumlu anakart.</p>
+        <p>2800 TL</p>
+        <button onclick="addToCart('ASUS B550 Anakart',2800)">Satın Al</button>
+        <button onclick="sellItem('ASUS B550 Anakart')">Sat</button>
+    </div>
+
+    <!-- 12 -->
+    <div class="card" data-category="monitor">
+        <img src="https://source.unsplash.com/300x200/?monitor" alt="27'' Gaming Monitör">
+        <h3>27'' Gaming Monitör</h3>
+        <p class="info">144Hz, 1ms tepki süresi.</p>
+        <p>5200 TL</p>
+        <button onclick="addToCart('27 Gaming Monitör',5200)">Satın Al</button>
+        <button onclick="sellItem('27 Gaming Monitör')">Sat</button>
+    </div>
+
+    <!-- 13 -->
+    <div class="card" data-category="monitor">
+        <img src="https://source.unsplash.com/300x200/?display" alt="32'' 4K Monitör">
+        <h3>32'' 4K Monitör</h3>
+        <p class="info">Ultra HD çözünürlük.</p>
+        <p>7200 TL</p>
+        <button onclick="addToCart('32 4K Monitör',7200)">Satın Al</button>
+        <button onclick="sellItem('32 4K Monitör')">Sat</button>
+    </div>
+
+     <!-- 14 -->
+    <div class="card" data-category="keyboard">
+        <img src="https://source.unsplash.com/300x200/?keyboard" alt="RGB Mekanik Klavye">
+        <h3>RGB Mekanik Klavye</h3>
+        <p class="info">Oyun için mekanik tuşlar.</p>
+        <p>950 TL</p>
+        <button onclick="addToCart('RGB Mekanik Klavye',950)">Satın Al</button>
+        <button onclick="sellItem('RGB Mekanik Klavye')">Sat</button>
+    </div>
+
+    <!-- 15 -->
+    <div class="card" data-category="keyboard">
+        <img src="https://source.unsplash.com/300x200/?keyboard" alt="Kablosuz Klavye">
+        <h3>Kablosuz Klavye</h3>
+        <p class="info">Bluetooth bağlantılı.</p>
+        <p>650 TL</p>
+        <button onclick="addToCart('Kablosuz Klavye',650)">Satın Al</button>
+        <button onclick="sellItem('Kablosuz Klavye')">Sat</button>
+    </div>
+
+    <!-- 16 -->
+    <div class="card" data-category="mouse">
+        <img src="https://source.unsplash.com/300x200/?mouse" alt="Gaming Mouse">
+        <h3>Gaming Mouse</h3>
+        <p class="info">Yüksek DPI, RGB ışık.</p>
+        <p>650 TL</p>
+        <button onclick="addToCart('Gaming Mouse',650)">Satın Al</button>
+        <button onclick="sellItem('Gaming Mouse')">Sat</button>
+    </div>
+
+    <!-- 17 -->
+    <div class="card" data-category="mouse">
+        <img src="https://source.unsplash.com/300x200/?mouse" alt="Kablosuz Mouse">
+        <h3>Kablosuz Mouse</h3>
+        <p class="info">Ergonomik tasarım.</p>
+        <p>400 TL</p>
+        <button onclick="addToCart('Kablosuz Mouse',400)">Satın Al</button>
+        <button onclick="sellItem('Kablosuz Mouse')">Sat</button>
+    </div>
+
+    <!-- 18 -->
+    <div class="card" data-category="case">
+        <img src="https://source.unsplash.com/300x200/?pc-case" alt="ATX Kasa">
+        <h3>ATX Kasa</h3>
+        <p class="info">Şık tasarım, RGB fanlar.</p>
+        <p>2200 TL</p>
+        <button onclick="addToCart('ATX Kasa',2200)">Satın Al</button>
+        <button onclick="sellItem('ATX Kasa')">Sat</button>
+    </div>
+
+    <!-- 19 -->
+    <div class="card" data-category="case">
+        <img src="https://source.unsplash.com/300x200/?pc-case" alt="Micro ATX Kasa">
+        <h3>Micro ATX Kasa</h3>
+        <p class="info">Kompakt tasarım.</p>
+        <p>1500 TL</p>
+        <button onclick="addToCart('Micro ATX Kasa',1500)">Satın Al</button>
+        <button onclick="sellItem('Micro ATX Kasa')">Sat</button>
+    </div>
+
+    <!-- 20 -->
+    <div class="card" data-category="cooler">
+        <img src="https://source.unsplash.com/300x200/?cooler" alt="Sıvı Soğutma Sistemi">
+        <h3>Sıvı Soğutma Sistemi</h3>
+        <p class="info">Sessiz ve verimli.</p>
+        <p>2800 TL</p>
+        <button onclick="addToCart('Sıvı Soğutma Sistemi',2800)">Satın Al</button>
+        <button onclick="sellItem('Sıvı Soğutma Sistemi')">Sat</button>
+    </div>
+
+    <!-- 21 -->
+    <div class="card" data-category="cooler">
+        <img src="https://source.unsplash.com/300x200/?fan" alt="RGB Fan Seti">
+        <h3>RGB Fan Seti</h3>
+        <p class="info">3 adet RGB fan.</p>
+        <p>600 TL</p>
+        <button onclick="addToCart('RGB Fan Seti',600)">Satın Al</button>
+        <button onclick="sellItem('RGB Fan Seti')">Sat</button>
+    </div>
+
+    <!-- 22 -->
+    <div class="card" data-category="hdd">
+        <img src="https://source.unsplash.com/300x200/?harddisk" alt="2TB HDD">
+        <h3>2TB HDD</h3>
+        <p class="info">Uygun fiyatlı depolama.</p>
+        <p>900 TL</p>
+        <button onclick="addToCart('2TB HDD',900)">Satın Al</button>
+        <button onclick="sellItem('2TB HDD')">Sat</button>
+    </div>
+
+    <!-- 23 -->
+    <div class="card" data-category="hdd">
+        <img src="https://source.unsplash.com/300x200/?harddisk" alt="4TB HDD">
+        <h3>4TB HDD</h3>
+        <p class="info">Yüksek kapasite.</p>
+        <p>1600 TL</p>
+        <button onclick="addToCart('4TB HDD',1600)">Satın Al</button>
+        <button onclick="sellItem('4TB HDD')">Sat</button>
+    </div>
+
+    <!-- 24 -->
+    <div class="card" data-category="monitor">
+        <img src="https://source.unsplash.com/300x200/?monitor" alt="24'' Full HD Monitör">
+        <h3>24'' Full HD Monitör</h3>
+        <p class="info">1080p çözünürlük.</p>
+        <p>2800 TL</p>
+        <button onclick="addToCart('24 Full HD Monitör',2800)">Satın Al</button>
+        <button onclick="sellItem('24 Full HD Monitör')">Sat</button>
+    </div>
+
+    <!-- 25 -->
+    <div class="card" data-category="monitor">
+        <img src="https://source.unsplash.com/300x200/?monitor" alt="34'' Ultrawide Monitör">
+        <h3>34'' Ultrawide Monitör</h3>
+        <p class="info">Geniş ekran deneyimi.</p>
+        <p>8500 TL</p>
+        <button onclick="addToCart('34 Ultrawide Monitör',8500)">Satın Al</button>
+        <button onclick="sellItem('34 Ultrawide Monitör')">Sat</button>
+    </div>
+</section>
+    
+</section>
+
+<div class="cart-panel" id="cart-panel">
+     <span class="cart-close-btn" onclick="closeCart()">✖</span>
+    <h2>Sepetim</h2>
+    <div id="cart-items"></div>
+    <h3 id="total-price"></h3>
+    <button onclick="clearCart()">Sepeti Temizle</button>
+</div>
+
+<div class="overlay hidden" id="overlay"></div>
+
+<div class="auth-panel hidden" id="auth-panel">
+    <span class="close-btn" onclick="closeAuth()">✖</span>
+    <h2>Kullanıcı Girişi</h2>
+    <input type="text" id="username" placeholder="Kullanıcı Adı">
+    <input type="password" id="password" placeholder="Şifre">
+    <button onclick="login()">Giriş Yap</button>
+    <p>Hesabınız yok mu? <span onclick="showRegister()">Kayıt Ol</span></p>
+</div>
+
+<div class="auth-panel hidden" id="register-panel">
+    <span class="close-btn" onclick="closeAuth()">✖</span>
+    <h2>Kayıt Ol</h2>
+    <input type="text" id="new-username" placeholder="Kullanıcı Adı">
+    <input type="email" id="new-email" placeholder="E‑mail">
+    <input type="password" id="new-password" placeholder="Şifre">
+    <input type="password" id="repeat-password" placeholder="Şifre Tekrar">
+    <button onclick="register()">Kayıt Ol</button>
+    <p>Zaten hesabınız var mı? <span onclick="showLogin()">Giriş Yap</span></p>
+</div>
+
+<footer>
+    <h3>İletişim Bilgileri</h3>
+    <p>📍 Konum: Kırşehir, Türkiye</p>
+    <p>🏠 Adres: Atatürk Caddesi No:12, Merkez/Kırşehir</p>
+    <p>📧 <a href="mailto:info@donanimmarket.com">info@donanimmarket.com</a></p>
+    <p>📞 <a href="tel:+903861234567">+90 386 123 45 67</a></p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
