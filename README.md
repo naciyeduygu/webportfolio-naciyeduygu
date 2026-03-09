@@ -1,12 +1,11 @@
 # web-portfolio-template
 Bu site Naciye Duygu tarafından yapılmaktadır .
 ## proje açıklaması
-Bu projede bilgisayar donanım araçlarının satışının yapıldığı bir web sayfası tasarımı amaçlandı.
+Kendim hakkındaki herşey.
 ## hedef kullanıcılar
-Bilgisayar kullanan ve tamir yeteneği olan herkes için yapılmış çok amaçlı bir web projesi.
+GitHub kullanıcıları ve genel kitle
 ## temel özellikler
-Bilgisayar donanım araçlarının alım satımının yapılmasını sağlamak 
-Hangi donanım parçasının ne iş yaptığına dair ufak bilgiler vermek.
+İlgi alanlarım ve çalışmalarım
 ## kullanılan teknolojiler
 Yapay zeka araçları
 # kullanılan diller
