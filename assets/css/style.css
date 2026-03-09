@@ -1,200 +1,92 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html,body{
-height:100%;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 body{
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-overflow:hidden;
+
+font-family:'Source Sans 3', sans-serif;
+
+background:#0f0f1a;
+
+color:white;
+
+margin:0;
+
 }
 
-.main-wrapper{
-height:100%;
-width:100%;
-overflow-y:auto;
-scroll-behavior:smooth;
-}
 
-/* Hero */
+.navbar{
 
-.hero{
-min-height:100vh;
-background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);
 display:flex;
-align-items:center;
-justify-content:center;
-padding:2rem;
+
+justify-content:space-between;
+
+padding:20px;
+
+background:#111;
+
 }
 
-.hero-content{
-text-align:center;
-max-width:700px;
-}
 
-.hero-title{
-font-size:3.5rem;
-color:white;
-margin-bottom:1rem;
-}
+.navbar ul{
 
-.hero-subtitle{
-font-size:1.5rem;
-color:white;
-margin-bottom:2rem;
-}
-
-.hero-bio{
-font-size:1.1rem;
-color:white;
-line-height:1.6;
-}
-
-/* Sections */
-
-.section{
-padding:4rem 2rem;
-background:white;
-}
-
-.section-title{
-font-size:2.5rem;
-text-align:center;
-margin-bottom:3rem;
-color:#667eea;
-}
-
-/* Passion */
-
-.passion-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:2rem;
-max-width:1200px;
-margin:auto;
-}
-
-.passion-card{
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-padding:2rem;
-border-radius:15px;
-color:white;
-text-align:center;
-}
-
-.passion-emoji{
-font-size:3rem;
-display:block;
-margin-bottom:1rem;
-}
-
-.passion-name{
-font-size:1.3rem;
-font-weight:600;
-}
-
-.passion-desc{
-font-size:0.95rem;
-margin-top:5px;
-}
-
-/* Projects */
-
-.project-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:2rem;
-max-width:1200px;
-margin:auto;
-}
-
-.project-card{
-border:2px solid #f0f0f0;
-border-radius:12px;
-padding:1.5rem;
-}
-
-.project-icon{
-font-size:2.5rem;
-margin-bottom:1rem;
-}
-
-.project-name{
-font-size:1.2rem;
-font-weight:600;
-margin-bottom:5px;
-}
-
-.project-desc{
-font-size:0.95rem;
-color:#666;
-}
-
-/* Skills */
-
-.skills-section{
-max-width:1000px;
-margin:auto;
-}
-
-.skill-category{
-margin-bottom:2rem;
-}
-
-.skill-category-title{
-font-size:1.3rem;
-color:#667eea;
-margin-bottom:1rem;
-}
-
-.skills-list{
 display:flex;
-flex-wrap:wrap;
-gap:1rem;
+
+gap:20px;
+
+list-style:none;
+
 }
 
-.skill-tag{
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+
+.navbar a{
+
 color:white;
-padding:0.6rem 1.2rem;
-border-radius:25px;
-font-size:0.95rem;
-}
 
-/* Footer */
-
-.footer-section{
-background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-color:white;
-padding:3rem 2rem;
-text-align:center;
-}
-
-.social-links{
-display:flex;
-justify-content:center;
-gap:2rem;
-margin-bottom:1.5rem;
-}
-
-.social-link{
-width:50px;
-height:50px;
-background:rgba(255,255,255,0.2);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:1.5rem;
-color:white;
 text-decoration:none;
+
 }
 
-.footer-text{
-font-size:0.95rem;
+
+#hero{
+
+text-align:center;
+
+padding:150px 20px;
+
+}
+
+
+.btn{
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+padding:12px 25px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+color:white;
+
+}
+
+
+section{
+
+padding:80px 20px;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+.project{
+
+background:#1e1e2f;
+
+padding:20px;
+
+margin-top:20px;
+
+border-radius:10px;
+
 }
